@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#000000</color>
+    <color name="purple_700">#000000</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="backScreen">#FA312E28</color>
+    <color name="buttonColor">#4C453C</color>
+    <color name="buttonText">#D0A435</color>
+    <color name="sessao_background">#5c1c09</color>
+    <color name="fichaCard_background">#CB3A3A3A</color>
+    <color name="titulo_login">#CAA76D</color>
+    <color name="subtitulo_login">#4C453C</color>
+    <color name="bt_login">#D0A435</color>
+    <color name="FundoRDado">#7E5205</color>
+    <color name="marrom_claro">#5c1c09</color>
+    <color name="marrom_escuro">#451000</color>
+    <color name="cor_letra_padrao">#ffffff</color>
+    <color name="cinza_padrao">#3a3a3a</color>
+    <color name="cor_icone_padrao">#ffffff</color>
+    <color name="fundo_login">#FA312E28</color>
+
+</resources>

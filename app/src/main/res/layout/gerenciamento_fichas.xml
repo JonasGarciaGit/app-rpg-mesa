@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/fundo_fichas"
+        tools:context=".MainActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            app:cardBackgroundColor="@color/fichaCard_background"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            >
+
+            <TextView
+                android:id="@+id/nomePersonagem1"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:gravity="top|center"
+                android:textColor="@color/titulo_login"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/levelPersonagem1"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/racaPersonagem1"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="6dp"
+                android:gravity="right"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/classePersonagem1"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="30dp"
+                android:gravity="left"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="60dp"
+                android:padding="5dp"
+                >
+
+                <Button
+                    android:id="@+id/btnEditarPersonagem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@color/bt_login"
+                    android:onClick="editar"
+                    android:text="Editar"
+                    android:textColor="@color/subtitulo_login"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/bt_login" />
+
+                <Button
+                    android:id="@+id/btnDeletarPersonagem1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/buttonColor"
+                    android:text="Deletar"
+                    android:textColor="@color/subtitulo_login"
+                    app:backgroundTint="@color/bt_login" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            app:cardBackgroundColor="@color/fichaCard_background"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <TextView
+                android:id="@+id/nomePersonagem2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:gravity="top|center"
+                android:textColor="@color/titulo_login"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/levelPersonagem2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/racaPersonagem2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="6dp"
+                android:gravity="right"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/classePersonagem2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="30dp"
+                android:gravity="left"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="60dp"
+                android:padding="5dp"
+                >
+
+                <Button
+                    android:id="@+id/btnEditarPersonagem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@color/bt_login"
+                    android:text="Editar"
+                    android:textColor="@color/subtitulo_login"
+                    app:backgroundTint="@color/bt_login" />
+
+                <Button
+                    android:id="@+id/btnDeletarPersonagem2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/bt_login"
+                    android:text="Deletar"
+                    android:textColor="@color/subtitulo_login"
+                    app:backgroundTint="@color/bt_login" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/fichaCard_background"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+            <TextView
+                android:id="@+id/nomePersonagem3"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:gravity="top|center"
+                android:textColor="@color/titulo_login"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/levelPersonagem3"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/racaPersonagem3"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="6dp"
+                android:gravity="right"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/classePersonagem3"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="30dp"
+                android:gravity="left"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="60dp"
+                android:padding="5dp"
+                >
+
+                <Button
+                    android:id="@+id/btnEditarPersonagem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:background="@color/bt_login"
+                    android:text="Editar"
+                    android:textColor="@color/subtitulo_login"
+                    app:backgroundTint="@color/bt_login" />
+
+                <Button
+                    android:id="@+id/btnDeletarPersonagem3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/bt_login"
+                    android:text="Deletar"
+                    android:textColor="@color/subtitulo_login"
+                    app:backgroundTint="@color/bt_login" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

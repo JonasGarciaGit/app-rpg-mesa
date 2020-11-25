@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo"
+    tools:context=".MenuSessao">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="360dp"
+        android:layout_height="249dp"
+        android:background="@color/backScreen"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Sessões"
+            android:textColor="@color/buttonText"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioFicha1"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="Ficha 1"
+                android:textColor="@color/buttonText"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioFicha2"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="Ficha 2"
+                android:textColor="@color/buttonText"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radioFicha3"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="Ficha 3"
+                android:textColor="@color/buttonText"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/criarSessao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/buttonColor"
+            android:backgroundTint="@color/buttonColor"
+            android:text="Criar sessão"
+            android:onClick="criarSessao"
+            android:textColor="@color/buttonText" />
+
+        <Button
+            android:id="@+id/entrarSessao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/buttonColor"
+            android:onClick="codigoPage"
+            android:text="Entrar em uma sessão"
+            android:textColor="@color/buttonText" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/buttonColor"
+        android:onClick="voltarInicio"
+        android:tint="@color/buttonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956"
+        app:srcCompat="@drawable/abc_vector_test" />
+
+    <LinearLayout
+        android:id="@+id/codPage"
+        android:layout_width="394dp"
+        android:layout_height="150dp"
+        android:background="@color/backScreen"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45999998">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Digite código da sessão :"
+            android:textColor="@color/buttonText"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/inputCodigoSessao"
+                android:layout_width="200dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <ImageButton
+                android:id="@+id/btEntrarSessao"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:onClick="entrarSessao"
+                app:srcCompat="@android:drawable/ic_media_play" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/voltarCodigoSessao"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:text="Voltar"
+            android:onClick="fecharCodigoPage"
+            android:textColor="@color/buttonText"
+            app:backgroundTint="@color/buttonColor"></Button>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">PPI</string>
+    <string name="title_activity_tela">tela</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="Azul">Mana</string>
+    <string name="texto">Texto</string>
+    <string name="level">Level</string>
+    <string name="hp">hp</string>
+    <string name="mana">Mana</string>
+    <string name="todo">TODO</string>
+    <string name="d6">D6</string>
+    <string name="d8">D8</string>
+    <string name="d10">D10</string>
+    <string name="d12">D12</string>
+    <string name="d20">D20</string>
+    <string name="d4">D4</string>
+    <string name="resultado">Resultado</string>
+    <string name="D20">D20</string>
+</resources>

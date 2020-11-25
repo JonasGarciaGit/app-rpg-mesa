@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rpgdemesa"
+    tools:context=".TelaInicial" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:background="#FA312E28"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/btEditar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/buttonColor"
+            android:onClick="sessao"
+            android:text="Sessões"
+            android:textColor="@color/buttonText" />
+
+        <Button
+            android:id="@+id/btGerenciarFichas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/buttonColor"
+            android:text="Fichas"
+            android:textColor="@color/buttonText" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/buttonColor"
+            android:text="Perfil"
+            android:textColor="@color/buttonText" />
+
+        <Button
+            android:id="@+id/singOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/buttonColor"
+            android:text="Logout"
+            android:textColor="@color/buttonText" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@color/buttonColor"
+        android:onClick="config"
+        android:tint="@color/buttonText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956"
+        app:srcCompat="@android:drawable/ic_menu_manage" />
+
+    <LinearLayout
+        android:id="@+id/menuConfig"
+        android:layout_width="275dp"
+        android:layout_height="225dp"
+        android:background="@color/backScreen"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backScreen"
+            android:gravity="center"
+            android:text="Configuração"
+            android:textColor="@color/buttonText"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Linguagem"
+            android:textColor="@color/buttonText"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="262dp"
+            android:layout_height="53dp">
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:checked="true"
+                android:text="Portugues"
+                android:textColor="@color/buttonText"
+                android:textColorLink="@color/buttonText" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="Inglês"
+                android:textColor="@color/buttonText" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/buttonColor"
+            android:onClick="salvar"
+            android:text="Salvar"
+            android:textColor="@color/buttonText" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/buttonColor"
+            android:onClick="voltar"
+            android:text="Voltar"
+            android:textColor="@color/buttonText" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
