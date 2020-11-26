@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/papel"
+    tools:context=".Pericia_SalvaGuardas">
+
+    <EditText
+        android:id="@+id/checkAtuacaoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="213dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkPercepcaoValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkAtletismoValue" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Perícias e Salva Guardas"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Inspiração"
+        app:layout_constraintEnd_toStartOf="@+id/inspiracaoId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <EditText
+        android:id="@+id/inspiracaoId"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView36"
+        app:layout_constraintStart_toEndOf="@+id/textView34"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="180dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Bônus de Proficiências"
+        app:layout_constraintEnd_toStartOf="@+id/proficienciaId"
+        app:layout_constraintStart_toEndOf="@+id/inspiracaoId"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <EditText
+        android:id="@+id/proficienciaId"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="+2"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView36"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        tools:text="+2" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Sabedoria Passiva (Percepção)"
+        app:layout_constraintEnd_toStartOf="@+id/sabedoriaPassivaId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+    <EditText
+        android:id="@+id/sabedoriaPassivaId"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView37"
+        app:layout_constraintTop_toBottomOf="@+id/inspiracaoId" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Testes de Resistência"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+    <EditText
+        android:id="@+id/checkForcaValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="228dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkCarismaValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+    <EditText
+        android:id="@+id/checkDestrezaValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="228dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkSabedoriaValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkForcaValue" />
+
+    <EditText
+        android:id="@+id/checkConstituicaoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="228dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkInteligenciaValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkDestrezaValue" />
+
+    <EditText
+        android:id="@+id/checkInteligenciaValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="113dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkConstituicaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkSabedoriaValue" />
+
+    <EditText
+        android:id="@+id/checkCarismaValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="113dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkForcaValue"
+        app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+    <EditText
+        android:id="@+id/checkSabedoriaValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="113dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkDestrezaValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkCarismaValue" />
+
+    <TextView
+        android:id="@+id/textView39"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:text="Perícias"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+    <EditText
+        android:id="@+id/checkAcrobaciaValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="213dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkIntuicaoValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+    <EditText
+        android:id="@+id/checkAdestrarAnimaisValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="213dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkInvestigacaoValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkAcrobaciaValue" />
+
+    <EditText
+        android:id="@+id/checkArcanismoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="213dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkMedicinaValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkAdestrarAnimaisValue" />
+
+    <EditText
+        android:id="@+id/checkAtletismoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="213dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkNaturezaValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkArcanismoValue" />
+
+    <EditText
+        android:id="@+id/checkEnganacaoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="213dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkPersuasaoValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkAtuacaoValue" />
+
+    <EditText
+        android:id="@+id/checkFurtividadeValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="215dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkPrestidigitacaoValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkEnganacaoValue" />
+
+    <EditText
+        android:id="@+id/checkHistoriaValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="215dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkReligiaoValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkFurtividadeValue" />
+
+    <EditText
+        android:id="@+id/checkIntimidacaoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="213dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkSobrevivenciaValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkHistoriaValue" />
+
+
+    <EditText
+        android:id="@+id/checkIntuicaoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="128dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkAcrobaciaValue"
+        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+    <EditText
+        android:id="@+id/checkInvestigacaoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="128dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkAdestrarAnimaisValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkIntuicaoValue" />
+
+    <EditText
+        android:id="@+id/checkMedicinaValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="128dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkArcanismoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkInvestigacaoValue" />
+
+    <EditText
+        android:id="@+id/checkNaturezaValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="128dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkAtletismoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkMedicinaValue" />
+
+    <EditText
+        android:id="@+id/checkPrestidigitacaoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="130dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkFurtividadeValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkPersuasaoValue" />
+
+    <EditText
+        android:id="@+id/checkPercepcaoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="128dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkAtuacaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkNaturezaValue" />
+
+    <EditText
+        android:id="@+id/checkReligiaoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="130dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkHistoriaValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkPrestidigitacaoValue" />
+
+    <EditText
+        android:id="@+id/checkPersuasaoValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="128dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkEnganacaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkPercepcaoValue" />
+
+    <EditText
+        android:id="@+id/checkSobrevivenciaValue"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="128dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkIntimidacaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkReligiaoValue" />
+
+    <Button
+        android:id="@+id/btCriarFicha"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="172dp"
+        android:background="@color/fundoBotao"
+        android:onClick="criarFicha"
+        android:text="Criar"
+        android:textColor="@color/letraBotao"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxIntimidacao" />
+
+    <CheckBox
+        android:id="@+id/checkBoxForca"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:text="Força"
+        app:layout_constraintStart_toEndOf="@+id/checkForcaValue"
+        app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDestreza"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:text="Destreza"
+        app:layout_constraintStart_toEndOf="@+id/checkDestrezaValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxForca" />
+
+    <CheckBox
+        android:id="@+id/checkBoxConstituicao"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Constituição"
+        app:layout_constraintStart_toEndOf="@+id/checkConstituicaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxDestreza" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCarisma"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:text="Carisma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkCarismaValue"
+        app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSabedoria"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:text="Sabedoria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkSabedoriaValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCarisma" />
+
+    <CheckBox
+        android:id="@+id/checkBoxInteligencia"
+        android:layout_width="110dp"
+        android:layout_height="35dp"
+        android:text="Inteligência"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkInteligenciaValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSabedoria" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAcrobacia"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:text="Acrobacia"
+        app:layout_constraintStart_toEndOf="@+id/checkAcrobaciaValue"
+        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAdestrarAnimais"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="Adestrar Animais"
+        app:layout_constraintStart_toEndOf="@+id/checkAdestrarAnimaisValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAcrobacia" />
+
+    <CheckBox
+        android:id="@+id/checkBoxArcanismo"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:text="Arcanismo"
+        app:layout_constraintStart_toEndOf="@+id/checkArcanismoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAdestrarAnimais" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAtletismo"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:text="Atletismo"
+        app:layout_constraintStart_toEndOf="@+id/checkAtletismoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxArcanismo" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAtuacao"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:text="Atuação"
+        app:layout_constraintStart_toEndOf="@+id/checkAtuacaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAtletismo" />
+
+    <CheckBox
+        android:id="@+id/checkBoxEnganacao"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:text="Enganação"
+        app:layout_constraintStart_toEndOf="@+id/checkEnganacaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAtuacao" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFurtividade"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:text="Furtividade"
+        app:layout_constraintStart_toEndOf="@+id/checkFurtividadeValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxEnganacao" />
+
+    <CheckBox
+        android:id="@+id/checkBoxHistoria"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:text="História"
+        app:layout_constraintStart_toEndOf="@+id/checkHistoriaValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxFurtividade" />
+
+    <CheckBox
+        android:id="@+id/checkBoxIntimidacao"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:text="Intimidação"
+        app:layout_constraintStart_toEndOf="@+id/checkIntimidacaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxHistoria" />
+
+    <CheckBox
+        android:id="@+id/checkBoxIntuicao"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:text="Intuição"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkIntuicaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+    <CheckBox
+        android:id="@+id/checkBoxInvestigacao"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:text="Investigação"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkInvestigacaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxIntuicao" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMedicina"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:text="Medicina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkMedicinaValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxInvestigacao" />
+
+    <CheckBox
+        android:id="@+id/checkBoxNatureza"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:text="Natureza"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkNaturezaValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxMedicina" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPercepcao"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:text="Percepção"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkPercepcaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxNatureza" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPersuasao"
+        android:layout_width="127dp"
+        android:layout_height="35dp"
+        android:text="Persuasão"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkPersuasaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPercepcao" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPrestidigitacao"
+        android:layout_width="128dp"
+        android:layout_height="35dp"
+        android:text="Prestidigitação"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkPrestidigitacaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPersuasao" />
+
+    <CheckBox
+        android:id="@+id/checkBoxReligiao"
+        android:layout_width="128dp"
+        android:layout_height="35dp"
+        android:text="Religião"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkReligiaoValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxPrestidigitacao" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSobrevivencia"
+        android:layout_width="128dp"
+        android:layout_height="35dp"
+        android:text="Sobrevivência"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkSobrevivenciaValue"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxReligiao" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

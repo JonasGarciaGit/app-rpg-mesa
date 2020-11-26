@@ -67,8 +67,7 @@
             android:layout_marginTop="60dp"
             android:textColorHint="@color/subtitulo_login"
             app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/cor_letra_padrao"
-            app:boxStrokeWidth="1dp"
+            app:boxStrokeColor="@color/outline"
             app:startIconDrawable="@drawable/iconeusuario"
             app:startIconTint="@color/titulo_login">
 
@@ -87,8 +86,7 @@
             android:layout_marginTop="120dp"
             android:textColorHint="@color/subtitulo_login"
             app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/cor_letra_padrao"
-            app:boxStrokeWidth="1dp"
+            app:boxStrokeColor="@color/outline"
             app:startIconDrawable="@drawable/iconeemail"
             app:startIconTint="@color/titulo_login">
 
@@ -107,10 +105,7 @@
             android:layout_marginTop="180dp"
             android:textColorHint="@color/subtitulo_login"
             app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/cor_icone_padrao"
-            app:boxStrokeWidth="1dp"
-            app:counterEnabled="true"
-            app:counterMaxLength="16"
+            app:boxStrokeColor="@color/outline"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/titulo_login"
             app:startIconDrawable="@drawable/iconechave"
@@ -132,10 +127,7 @@
             android:layout_marginTop="240dp"
             android:textColorHint="@color/subtitulo_login"
             app:boxBackgroundMode="outline"
-            app:boxStrokeColor="@color/cor_icone_padrao"
-            app:boxStrokeWidth="1dp"
-            app:counterEnabled="true"
-            app:counterMaxLength="16"
+            app:boxStrokeColor="@color/outline"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/titulo_login"
             app:startIconDrawable="@drawable/iconechave"

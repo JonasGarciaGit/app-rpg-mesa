@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/papel"
+    tools:context=".Inventario">
+
+    <Button
+        android:id="@+id/btInventario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/fundoBotao"
+        android:onClick="buttonInventario"
+        android:text="@string/continuar"
+        android:textColor="@color/letraBotao"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descEquipamento" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Ataques e Conjuração"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Nome"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView24"
+        app:layout_constraintEnd_toStartOf="@+id/nomeAtq1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Bonus de Atq."
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintEnd_toStartOf="@+id/bonusAtq1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomeAtq1" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="67dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Dano/Tipo"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/nomeAtq2"
+        app:layout_constraintEnd_toStartOf="@+id/danoAtq1"
+        app:layout_constraintStart_toEndOf="@+id/bonusAtq1"
+        app:layout_constraintTop_toBottomOf="@+id/nomeAtq1" />
+
+    <EditText
+        android:id="@+id/danoAtq1"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/nomeAtq2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView25"
+        app:layout_constraintTop_toBottomOf="@+id/nomeAtq1" />
+
+    <EditText
+        android:id="@+id/nomeAtq1"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <EditText
+        android:id="@+id/bonusAtq1"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/nomeAtq2"
+        app:layout_constraintEnd_toStartOf="@+id/textView25"
+        app:layout_constraintStart_toEndOf="@+id/textView24"
+        app:layout_constraintTop_toBottomOf="@+id/nomeAtq1" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Nome"
+        app:layout_constraintBottom_toTopOf="@+id/textView19"
+        app:layout_constraintEnd_toStartOf="@+id/nomeAtq2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+    <EditText
+        android:id="@+id/nomeAtq2"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/bonusAtq1" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Bonus de Atq."
+        app:layout_constraintBottom_toTopOf="@+id/textView22"
+        app:layout_constraintEnd_toStartOf="@+id/bonusAtq2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <EditText
+        android:id="@+id/bonusAtq2"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/nomeAtq3"
+        app:layout_constraintEnd_toStartOf="@+id/textView20"
+        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/nomeAtq2" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="67dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Dano/Tipo"
+        app:layout_constraintEnd_toStartOf="@+id/danoAtq2"
+        app:layout_constraintStart_toEndOf="@+id/bonusAtq2"
+        app:layout_constraintTop_toBottomOf="@+id/nomeAtq2" />
+
+    <EditText
+        android:id="@+id/danoAtq2"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/nomeAtq3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/nomeAtq2" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Nome"
+        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        app:layout_constraintEnd_toStartOf="@+id/nomeAtq3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <EditText
+        android:id="@+id/nomeAtq3"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/bonusAtq2" />
+
+    <TextView
+        android:id="@+id/textView26"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Bonus de Atq."
+        app:layout_constraintEnd_toStartOf="@+id/bonusAtq3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <EditText
+        android:id="@+id/bonusAtq3"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView27"
+        app:layout_constraintStart_toEndOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/nomeAtq3" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="67dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="Dano/Tipo"
+        app:layout_constraintEnd_toStartOf="@+id/danoAtq3"
+        app:layout_constraintStart_toEndOf="@+id/bonusAtq3"
+        app:layout_constraintTop_toBottomOf="@+id/nomeAtq3" />
+
+    <EditText
+        android:id="@+id/danoAtq3"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView27"
+        app:layout_constraintTop_toBottomOf="@+id/nomeAtq3" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Equipamento"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView29"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/atqConjuId" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="PC"
+        app:layout_constraintBottom_toTopOf="@+id/descEquipamento"
+        app:layout_constraintEnd_toStartOf="@+id/pcId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <EditText
+        android:id="@+id/pcId"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/descEquipamento"
+        app:layout_constraintEnd_toStartOf="@+id/textView30"
+        app:layout_constraintStart_toEndOf="@+id/textView29"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="PP"
+        app:layout_constraintBottom_toTopOf="@+id/descEquipamento"
+        app:layout_constraintEnd_toStartOf="@+id/ppId"
+        app:layout_constraintStart_toEndOf="@+id/pcId"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <EditText
+        android:id="@+id/ppId"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/descEquipamento"
+        app:layout_constraintEnd_toStartOf="@+id/textView31"
+        app:layout_constraintStart_toEndOf="@+id/textView30"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="PE"
+        app:layout_constraintBottom_toTopOf="@+id/descEquipamento"
+        app:layout_constraintEnd_toStartOf="@+id/peId"
+        app:layout_constraintStart_toEndOf="@+id/ppId"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="PO"
+        app:layout_constraintEnd_toStartOf="@+id/poId"
+        app:layout_constraintStart_toEndOf="@+id/peId"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <EditText
+        android:id="@+id/peId"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/descEquipamento"
+        app:layout_constraintEnd_toStartOf="@+id/textView32"
+        app:layout_constraintStart_toEndOf="@+id/textView31"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <EditText
+        android:id="@+id/poId"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView33"
+        app:layout_constraintStart_toEndOf="@+id/textView32"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="PL"
+        app:layout_constraintEnd_toStartOf="@+id/plId"
+        app:layout_constraintStart_toEndOf="@+id/poId"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <EditText
+        android:id="@+id/plId"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView33"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/descEquipamento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/textView29">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Equipamento"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/atqConjuId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        app:boxBackgroundMode="outline"
+        app:hintTextColor="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textView28"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ataques e Conjuração"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

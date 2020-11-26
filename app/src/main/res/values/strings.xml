@@ -23,4 +23,33 @@
     <string name="d4">D4</string>
     <string name="resultado">Resultado</string>
     <string name="D20">D20</string>
+
+    <string name="continuar">continuar</string>
+
+    <string-array name="dropDownClasse">
+        <item>Barbaro</item>
+        <item>Bardo</item>
+        <item>Bruxo</item>
+        <item>Clerigo</item>
+        <item>Druida</item>
+        <item>Feiticeiro</item>
+        <item>Guerreiro</item>
+        <item>Ladino</item>
+        <item>Mago</item>
+        <item>Monge</item>
+        <item>Paladino</item>
+        <item>Patrulheiro</item>
+    </string-array>
+
+    <string-array name="dropDownRaca">
+        <item>Anao</item>
+        <item>Elfo</item>
+        <item>Halfling</item>
+        <item>Humano</item>
+        <item>Draconato</item>
+        <item>Gnomo</item>
+        <item>Meio-elfo</item>
+        <item>Meio-orc</item>
+        <item>Tieflings</item>
+    </string-array>
 </resources>

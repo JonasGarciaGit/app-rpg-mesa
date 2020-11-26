@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PPI">
+        <activity android:name=".Pericia_SalvaGuardas" android:screenOrientation="portrait"></activity>
+        <activity android:name=".Inventario" android:screenOrientation="portrait"></activity>
+        <activity android:name=".Caracteristica" android:screenOrientation="portrait"></activity>
+        <activity android:name=".FichaPersonagem" android:screenOrientation="portrait"></activity>
         <activity android:name=".TelaInicial" android:screenOrientation="landscape"></activity>
         <activity android:name=".CadastrarJogadorController" android:screenOrientation="landscape"></activity>
         <activity android:name=".RoletagemDados" android:screenOrientation="landscape"></activity>

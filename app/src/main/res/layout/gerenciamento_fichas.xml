@@ -68,6 +68,14 @@
                 android:gravity="left"
                 android:textColor="@android:color/white" />
 
+            <Button
+                android:id="@+id/btIncluirFicha1"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:text="Criar ficha"
+                ></Button>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -154,6 +162,14 @@
                 android:gravity="left"
                 android:textColor="@android:color/white" />
 
+            <Button
+                android:id="@+id/btIncluirFicha2"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:text="Criar ficha"
+                ></Button>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -238,6 +254,14 @@
                 android:layout_marginTop="30dp"
                 android:gravity="left"
                 android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btIncluirFicha3"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:text="Criar ficha"
+                ></Button>
 
             <LinearLayout
                 android:layout_width="match_parent"

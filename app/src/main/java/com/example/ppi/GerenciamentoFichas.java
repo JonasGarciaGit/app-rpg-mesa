@@ -49,6 +49,14 @@ public class GerenciamentoFichas extends AppCompatActivity {
     private Button btDeletar2;
     private Button btDeletar3;
 
+    private Button btEditar1;
+    private Button btEditar2;
+    private Button btEditar3;
+
+    private Button btCriarFicha1;
+    private Button btCriarFicha2;
+    private Button btCriarFicha3;
+
     private String idPersonagem1;
     private String idPersonagem2;
     private String idPersonagem3;
@@ -80,6 +88,24 @@ public class GerenciamentoFichas extends AppCompatActivity {
         btDeletar2 = findViewById(R.id.btnDeletarPersonagem2);
         btDeletar3 = findViewById(R.id.btnDeletarPersonagem3);
 
+        btEditar1 = findViewById(R.id.btnEditarPersonagem1);
+        btEditar2 = findViewById(R.id.btnEditarPersonagem2);
+        btEditar3 = findViewById(R.id.btnEditarPersonagem3);
+
+
+        btCriarFicha1 = findViewById(R.id.btIncluirFicha1);
+        btCriarFicha2 = findViewById(R.id.btIncluirFicha2);
+        btCriarFicha3 = findViewById(R.id.btIncluirFicha3);
+
+
+        btEditar1.setVisibility(View.INVISIBLE);
+        btEditar2.setVisibility(View.INVISIBLE);
+        btEditar3.setVisibility(View.INVISIBLE);
+
+        btDeletar1.setVisibility(View.INVISIBLE);
+        btDeletar2.setVisibility(View.INVISIBLE);
+        btDeletar3.setVisibility(View.INVISIBLE);
+
         //Recebendo e printando o id
         Intent gerenciamentoFichas = getIntent();
         parametros = gerenciamentoFichas.getExtras();
@@ -104,6 +130,29 @@ public class GerenciamentoFichas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 deletar(idPersonagem3, idJogador);
+            }
+        });
+
+        btCriarFicha1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                criarFicha(idJogador);
+            }
+        });
+
+
+        btCriarFicha2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                criarFicha(idJogador);
+            }
+        });
+
+
+        btCriarFicha3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                criarFicha( idJogador);
             }
         });
 
@@ -171,6 +220,9 @@ public class GerenciamentoFichas extends AppCompatActivity {
                                 racaPersonagem1.setText("Raça: " + (f.getRaca().isEmpty() || f.getRaca() == null ? "---" : f.getRaca()));
                                 levelPersonagem1.setText("Level: " + (f.getNivel().toString().isEmpty() || f.getNivel() == null ? "---" : f.getNivel()));
                                 idPersonagem1 = f.getId().isEmpty() ? null : f.getId();
+                                btCriarFicha1.setVisibility(View.INVISIBLE);
+                                btEditar1.setVisibility(View.VISIBLE);
+                                btDeletar1.setVisibility(View.VISIBLE);
                             }
                             if(verificarFicha == 2){
                                 nomePersonagem2.setText(f.getNomeDoPersonagem().isEmpty() || f.getNomeDoPersonagem() == null ? "---" : f.getNomeDoPersonagem());
@@ -178,6 +230,9 @@ public class GerenciamentoFichas extends AppCompatActivity {
                                 racaPersonagem2.setText("Raça: " + (f.getRaca().isEmpty() || f.getRaca() == null ? "---" : f.getRaca()));
                                 levelPersonagem2.setText("Level: " + (f.getNivel().toString().isEmpty() || f.getNivel() == null ? "---" : f.getNivel()));
                                 idPersonagem2 = f.getId().isEmpty() ? null : f.getId();
+                                btCriarFicha2.setVisibility(View.INVISIBLE);
+                                btEditar2.setVisibility(View.VISIBLE);
+                                btDeletar2.setVisibility(View.VISIBLE);
                             }
                             if(verificarFicha == 3){
                                 nomePersonagem3.setText(f.getNomeDoPersonagem().isEmpty() || f.getNomeDoPersonagem() == null ? "---" : f.getNomeDoPersonagem());
@@ -185,6 +240,9 @@ public class GerenciamentoFichas extends AppCompatActivity {
                                 racaPersonagem3.setText("Raça: " + (f.getRaca().isEmpty() || f.getRaca() == null ? "---" : f.getRaca()));
                                 levelPersonagem3.setText("Level: " + (f.getNivel().toString().isEmpty() || f.getNivel() == null ? "---" : f.getNivel()));
                                 idPersonagem3 = f.getId().isEmpty() ? null : f.getId();
+                                btCriarFicha3.setVisibility(View.INVISIBLE);
+                                btEditar3.setVisibility(View.VISIBLE);
+                                btDeletar3.setVisibility(View.VISIBLE);
                             }
                             verificarFicha++;
                         }
@@ -202,6 +260,14 @@ public class GerenciamentoFichas extends AppCompatActivity {
         }catch (Exception e){
             Log.e("ErroFichaPeloIdFirebase", "pegarFichaPeloIdFirebase: "+ e.getMessage());
         }
+    }
+
+    public void criarFicha( String idJogador){
+        Bundle param = new Bundle();
+        param.putString("id_jogador", idJogador);
+        Intent intent = new Intent(GerenciamentoFichas.this, FichaPersonagem.class);
+        intent.putExtras(param);
+        startActivity(intent);
     }
 
 }

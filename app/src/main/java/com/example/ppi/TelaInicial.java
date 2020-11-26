@@ -156,6 +156,7 @@ public class TelaInicial extends AppCompatActivity {
                         jogador.setSenha("***");
 
                         referencia.child("jogadores").child(acct.getId()).setValue(jogador);
+                        referencia.child("jogadores").child(acct.getId()).child("fichas").setValue("lista de ficha");
                     }
 
                     if (tipoConta.equals("app")) {
@@ -165,6 +166,7 @@ public class TelaInicial extends AppCompatActivity {
                         jogador.setSenha("***");
 
                         referencia.child("jogadores").child(jogadorAuth.getCurrentUser().getUid()).setValue(jogador);
+                        referencia.child("jogadores").child(jogadorAuth.getCurrentUser().getUid()).child("fichas").setValue("lista de ficha");
                     }
                 }
             }

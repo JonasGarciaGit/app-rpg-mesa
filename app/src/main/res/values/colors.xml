@@ -6,7 +6,7 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#FFFFFF</color>
     <color name="backScreen">#FA312E28</color>
     <color name="buttonColor">#4C453C</color>
     <color name="buttonText">#D0A435</color>
@@ -18,9 +18,11 @@
     <color name="FundoRDado">#7E5205</color>
     <color name="marrom_claro">#5c1c09</color>
     <color name="marrom_escuro">#451000</color>
-    <color name="cor_letra_padrao">#ffffff</color>
+    <color name="cor_letra_padrao">#FFFFFF</color>
     <color name="cinza_padrao">#3a3a3a</color>
-    <color name="cor_icone_padrao">#ffffff</color>
+    <color name="cor_icone_padrao">#FFFFFF</color>
     <color name="fundo_login">#FA312E28</color>
-
+    <color name="letraBotao">#4C453C</color>
+    <color name="fundoBotao">#D0A435</color>
+    <color name="outline">#D0A435</color>
 </resources>
