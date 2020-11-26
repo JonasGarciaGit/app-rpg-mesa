@@ -160,7 +160,7 @@ public class TelaSessao extends AppCompatActivity {
                                     mp1.setText("---");
                                 } else {
                                     nome1.setText(slot.getFicha() == null ? "---" : slot.getFicha().getNomeDoPersonagem());
-                                    level1.setText(slot.getFicha() == null ? "---" : slot.getFicha().getNivel().toString());
+                                    level1.setText(slot.getFicha() == null ? "---" : "LEVEL " + slot.getFicha().getNivel().toString());
                                     hp1.setText(slot.getFicha() == null ? "---" : slot.getFicha().getPvAtuais().toString());
                                     mp1.setText("---");
                                     btEditar1.setOnClickListener((v) -> {
@@ -180,7 +180,7 @@ public class TelaSessao extends AppCompatActivity {
                                     mp2.setText("---");
                                 } else {
                                     nome2.setText(slot.getFicha() == null ? "---" : slot.getFicha().getNomeDoPersonagem());
-                                    level2.setText(slot.getFicha() == null ? "---" : slot.getFicha().getNivel().toString());
+                                    level2.setText(slot.getFicha() == null ? "---" : "LEVEL " + slot.getFicha().getNivel().toString());
                                     hp2.setText(slot.getFicha() == null ? "---" : slot.getFicha().getPvAtuais().toString());
                                     mp2.setText("---");
                                     btEditar2.setOnClickListener((v) -> {
@@ -200,7 +200,7 @@ public class TelaSessao extends AppCompatActivity {
                                     mp3.setText("---");
                                 } else {
                                     nome3.setText(slot.getFicha() == null ? "---" : slot.getFicha().getNomeDoPersonagem());
-                                    level3.setText(slot.getFicha() == null ? "---" : slot.getFicha().getNivel().toString());
+                                    level3.setText(slot.getFicha() == null ? "---" : "LEVEL " + slot.getFicha().getNivel().toString());
                                     hp3.setText(slot.getFicha() == null ? "---" : slot.getFicha().getPvAtuais().toString());
                                     mp3.setText("---");
                                     btEditar3.setOnClickListener((v) -> {
@@ -220,7 +220,7 @@ public class TelaSessao extends AppCompatActivity {
                                     mp4.setText("---");
                                 } else {
                                     nome4.setText(slot.getFicha() == null ? "---" : slot.getFicha().getNomeDoPersonagem());
-                                    level4.setText(slot.getFicha() == null ? "---" : slot.getFicha().getNivel().toString());
+                                    level4.setText(slot.getFicha() == null ? "---" : "LEVEL " + slot.getFicha().getNivel().toString());
                                     hp4.setText(slot.getFicha() == null ? "---" : slot.getFicha().getPvAtuais().toString());
                                     mp4.setText("---");
                                     btEditar4.setOnClickListener((v) -> {
@@ -240,7 +240,7 @@ public class TelaSessao extends AppCompatActivity {
                                     mp5.setText("---");
                                 } else {
                                     nome5.setText(slot.getFicha() == null ? "---" : slot.getFicha().getNomeDoPersonagem());
-                                    level5.setText(slot.getFicha() == null ? "---" : slot.getFicha().getNivel().toString());
+                                    level5.setText(slot.getFicha() == null ? "---" : "LEVEL " + slot.getFicha().getNivel().toString());
                                     hp5.setText(slot.getFicha() == null ? "---" : slot.getFicha().getPvAtuais().toString());
                                     mp5.setText("---");
                                     btEditar5.setOnClickListener((v) -> {
@@ -297,7 +297,7 @@ public class TelaSessao extends AppCompatActivity {
 
                         Intent intentParaMenuPrincipal = new Intent(TelaSessao.this, TelaInicial.class);
                         destruirSessao(codSessao);
-                        finish();
+                        intentParaMenuPrincipal.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intentParaMenuPrincipal);
                     }
                 }).setNegativeButton("Não", new DialogInterface.OnClickListener() {
@@ -383,4 +383,8 @@ public class TelaSessao extends AppCompatActivity {
         startActivity(intentSessaoParaDados);
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
 }

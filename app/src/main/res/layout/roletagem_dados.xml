@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RoletagemDados">
-
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
@@ -17,12 +17,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/plano_de_fundo3" />
-
     <Button
         android:id="@+id/btD6"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/buttonshape"
         android:fontFamily="@font/luckiest_guy"
         android:onClick="rodarDadoD6"
@@ -37,14 +36,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultado" />
-
     <Button
         android:id="@+id/btD8"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="120dp"
         android:layout_marginRight="120dp"
         android:background="@drawable/buttonshape"
@@ -61,14 +59,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btD6"
         app:layout_constraintTop_toBottomOf="@+id/resultado" />
-
     <Button
         android:id="@+id/btD10"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="120dp"
         android:layout_marginLeft="120dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/buttonshape"
@@ -86,12 +83,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btD4"
         tools:ignore="MissingConstraints" />
-
     <Button
         android:id="@+id/btD12"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/buttonshape"
         android:fontFamily="@font/luckiest_guy"
         android:onClick="rodarDadoD12"
@@ -106,14 +102,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btD6" />
-
     <Button
         android:id="@+id/btD20"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="120dp"
         android:layout_marginRight="120dp"
         android:background="@drawable/buttonshape"
@@ -130,14 +125,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btD12"
         app:layout_constraintTop_toBottomOf="@+id/btD8" />
-
     <Button
         android:id="@+id/btD4"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="120dp"
         android:layout_marginLeft="120dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/buttonshape"
@@ -155,7 +149,6 @@
         app:layout_constraintEnd_toStartOf="@+id/btD6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultado" />
-
     <TextView
         android:id="@+id/resultado"
         android:layout_width="50dp"
@@ -169,5 +162,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

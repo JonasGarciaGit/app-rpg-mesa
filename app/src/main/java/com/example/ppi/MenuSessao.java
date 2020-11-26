@@ -69,39 +69,61 @@ public class MenuSessao extends AppCompatActivity {
 
     public void criarSessao(View view){
             selecionarFicha();
-            DatabaseReference sessoes = FirebaseDatabase.getInstance().getReference().child("sessoes");
 
-            //Gerando código da sessão com 6 digitos
-            Random random = new Random();
-            Integer codSessao = random.nextInt((((999999 - 100000) + 1)) + 100000);
+            DatabaseReference ficha = FirebaseDatabase.getInstance().getReference("jogadores")
+                .child(idUsuario)
+                .child("fichas")
+                .child(idFicha);
+
+            ficha.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                    if(snapshot.hasChildren()){
+                        DatabaseReference sessoes = FirebaseDatabase.getInstance().getReference().child("sessoes");
+
+                        //Gerando código da sessão com 6 digitos
+                        Random random = new Random();
+                        Integer codSessao = random.nextInt((((999999 - 100000) + 1)) + 100000);
 
 
-            //Criando sessao e slots para os jogadores
-            DatabaseReference sessao = sessoes.child(codSessao.toString());
+                        //Criando sessao e slots para os jogadores
+                        DatabaseReference sessao = sessoes.child(codSessao.toString());
 
-            sessao.child("valorDado").setValue("0");
+                        sessao.child("valorDado").setValue("0");
 
-            DatabaseReference slot1 =  sessao.child("slot1");
-            slot1.child("status").setValue("vazio");
+                        DatabaseReference slot1 =  sessao.child("slot1");
+                        slot1.child("status").setValue("vazio");
 
-            DatabaseReference slot2 =  sessao.child("slot2");
-            slot2.child("status").setValue("vazio");
+                        DatabaseReference slot2 =  sessao.child("slot2");
+                        slot2.child("status").setValue("vazio");
 
-            DatabaseReference slot3 =  sessao.child("slot3");
-            slot3.child("status").setValue("vazio");
+                        DatabaseReference slot3 =  sessao.child("slot3");
+                        slot3.child("status").setValue("vazio");
 
-            DatabaseReference slot4 =  sessao.child("slot4");
-            slot4.child("status").setValue("vazio");
+                        DatabaseReference slot4 =  sessao.child("slot4");
+                        slot4.child("status").setValue("vazio");
 
-            DatabaseReference slot5 =  sessao.child("slot5");
-            slot5.child("status").setValue("vazio");
+                        DatabaseReference slot5 =  sessao.child("slot5");
+                        slot5.child("status").setValue("vazio");
 
-            //Este slot sempre pertencera ao mestre
-            DatabaseReference slot6 =  sessao.child("slot6");
-            slot6.child("status").setValue("vazio");
+                        //Este slot sempre pertencera ao mestre
+                        DatabaseReference slot6 =  sessao.child("slot6");
+                        slot6.child("status").setValue("vazio");
 
-            //carregando ficha no slot
-            carregarFichaNoSlot(codSessao.toString(),"slot1");
+                        //carregando ficha no slot
+                        carregarFichaNoSlot(codSessao.toString(),"slot1");
+                    }else {
+                        Toast.makeText(getApplicationContext(),"Não existe uma ficha criada nesse slot" , Toast.LENGTH_LONG).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
     }
 
     public void entrarSessao(View view){
@@ -176,24 +198,31 @@ public class MenuSessao extends AppCompatActivity {
                     .child(idUsuario)
                     .child("fichas")
                     .child(idFicha);
+
             try {
-                ficha.addValueEventListener(new ValueEventListener() {
+                ficha.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Ficha fichaModel = snapshot.getValue(Ficha.class);
 
-                        Bundle informacoesSessao = new Bundle();
-                        informacoesSessao.putString("id_jogador", idUsuario);
-                        informacoesSessao.putString("id_ficha", idFicha == null ? "" : idFicha);
-                        informacoesSessao.putString("cod_sessao", codSessao);
-                        informacoesSessao.putString("slot_jogador", slot);
-                        Intent intentIrParaSessao = new Intent(MenuSessao.this, TelaSessao.class);
-                        intentIrParaSessao.putExtras(informacoesSessao);
+                        if(snapshot.hasChildren()){
+                            Ficha fichaModel = snapshot.getValue(Ficha.class);
 
-                        slotN.child("status").setValue("ocupado");
-                        slotN.child("ficha").setValue(fichaModel);
-                        startActivity(intentIrParaSessao);
-                    }
+                            Bundle informacoesSessao = new Bundle();
+                            informacoesSessao.putString("id_jogador", idUsuario);
+                            informacoesSessao.putString("id_ficha", idFicha == null ? "" : idFicha);
+                            informacoesSessao.putString("cod_sessao", codSessao);
+                            informacoesSessao.putString("slot_jogador", slot);
+                            Intent intentIrParaSessao = new Intent(MenuSessao.this, TelaSessao.class);
+                            intentIrParaSessao.putExtras(informacoesSessao);
+
+                            slotN.child("status").setValue("ocupado");
+                            slotN.child("ficha").setValue(fichaModel);
+                            startActivity(intentIrParaSessao);
+                        }else{
+                            Toast.makeText(getApplicationContext(),"Não existe uma ficha criada nesse slot" , Toast.LENGTH_LONG).show();
+                        }
+
+                       }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {

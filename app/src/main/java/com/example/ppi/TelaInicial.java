@@ -1,6 +1,9 @@
 package com.example.ppi;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +42,7 @@ public class TelaInicial extends AppCompatActivity {
     GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth jogadorAuth = FirebaseAuth.getInstance();
     private DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
+    private MediaPlayer mdp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +101,10 @@ public class TelaInicial extends AppCompatActivity {
                 startActivity(intentMenuPrincipal);
             }
         });
+
+//        mdp = MediaPlayer.create(TelaInicial.this, R.raw.yggdrasil);
+//        mdp.start();
+//        mdp.setLooping(true);
     }
 
 

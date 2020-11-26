@@ -134,7 +134,7 @@ public class Pericia_SalvaGuardas extends AppCompatActivity {
                 param.putString("id_usuario", ficha.getIdJogador());
                 Intent intent = new Intent(Pericia_SalvaGuardas.this, GerenciamentoFichas.class);
                 intent.putExtras(param);
-                finish();
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
 
