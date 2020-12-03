@@ -25,7 +25,8 @@ import model.Ficha;
 public class Pericia_SalvaGuardas extends AppCompatActivity {
 
     private Ficha ficha;
-
+    private Ficha alterarFicha = null;
+    private String codSessao = null;
     private Button btCriarFicha;
 
     private EditText inspiracaoId, bonusProficiencia, sabedoriaPassiva;
@@ -102,40 +103,53 @@ public class Pericia_SalvaGuardas extends AppCompatActivity {
                 ficha.setDestreza(checkBoxDestreza.isChecked());
                 ficha.setCostituicao(checkBoxConstituicao.isChecked());
 
+                if(alterarFicha == null) {
+                    if (!idFichas.contains("001") && !idFichas.contains("002") && !idFichas.contains("003")) {
+                        ficha.setId("001");
+                    }
+                    if (idFichas.contains("001") && !idFichas.contains("002") && !idFichas.contains("003")) {
+                        ficha.setId("002");
+                    }
+                    if (!idFichas.contains("001") && !idFichas.contains("002") && idFichas.contains("003")) {
+                        ficha.setId("001");
+                    }
+                    if (!idFichas.contains("001") && idFichas.contains("002") && idFichas.contains("003")) {
+                        ficha.setId("001");
+                    }
 
-                if (!idFichas.contains("001") && !idFichas.contains("002") && !idFichas.contains("003")) {
-                    ficha.setId("001");
-                }
-                if (idFichas.contains("001") && !idFichas.contains("002") && !idFichas.contains("003")) {
-                    ficha.setId("002");
-                }
-                if (!idFichas.contains("001") && !idFichas.contains("002") && idFichas.contains("003")) {
-                    ficha.setId("001");
-                }
-                if (!idFichas.contains("001") && idFichas.contains("002") && idFichas.contains("003")) {
-                    ficha.setId("001");
+                    if (!idFichas.contains("001") && idFichas.contains("002") && !idFichas.contains("003")) {
+                        ficha.setId("001");
+                    }
+
+                    if (idFichas.contains("001") && !idFichas.contains("002") && idFichas.contains("003")) {
+                        ficha.setId("002");
+                    }
+                    if (idFichas.contains("001") && idFichas.contains("002") && !idFichas.contains("003")) {
+                        ficha.setId("003");
+                    }
+
+                    Log.i("criacaoFicha", "To aqui" + "idFicha = " + ficha.getId());
+                    fichas.child(ficha.getId()).setValue(ficha);
+                }else{
+                    ficha.setId(alterarFicha.getId());
+                    fichas.child(ficha.getId()).setValue(ficha);
                 }
 
-                if (!idFichas.contains("001") && idFichas.contains("002") && !idFichas.contains("003")) {
-                    ficha.setId("001");
+                if(codSessao != null){
+                    String slot = getIntent().getStringExtra("slot_jogador");
+                    Log.i("SESSAO", codSessao + slot);
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                    reference.child("sessoes").child(codSessao).child(slot).child("status").setValue("vazio");
+                    carregarFichaNoSlot(codSessao,slot);
+                }else{
+                    Bundle param = new Bundle();
+                    param.putString("id_usuario", ficha.getIdJogador());
+                    Intent intent = new Intent(Pericia_SalvaGuardas.this, GerenciamentoFichas.class);
+                    intent.putExtras(param);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
                 }
 
-                if (idFichas.contains("001") && !idFichas.contains("002") && idFichas.contains("003")) {
-                    ficha.setId("002");
-                }
-                if (idFichas.contains("001") && idFichas.contains("002") && !idFichas.contains("003")) {
-                    ficha.setId("003");
-                }
-
-                Log.i("criacaoFicha", "To aqui" + "idFicha = " + ficha.getId());
-                fichas.child(ficha.getId()).setValue(ficha);
-
-                Bundle param = new Bundle();
-                param.putString("id_usuario", ficha.getIdJogador());
-                Intent intent = new Intent(Pericia_SalvaGuardas.this, GerenciamentoFichas.class);
-                intent.putExtras(param);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
             }
 
             @Override
@@ -149,9 +163,10 @@ public class Pericia_SalvaGuardas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pericia__salva_guardas);
-
+        codSessao =  getIntent().getStringExtra("cod_sessao");
+        String slot = getIntent().getStringExtra("slot_jogador");
         ficha = (Ficha) getIntent().getSerializableExtra("ficha");
-
+        alterarFicha  = (Ficha) getIntent().getSerializableExtra("alterarFicha");
         btCriarFicha = findViewById(R.id.btCriarFicha);
         checkBoxAcrobacia = findViewById(R.id.checkBoxAcrobacia);
         checkBoxAdrestrarAnimais = findViewById(R.id.checkBoxAdestrarAnimais);
@@ -206,6 +221,10 @@ public class Pericia_SalvaGuardas extends AppCompatActivity {
         checkBoxConstituicao = findViewById(R.id.checkBoxConstituicao);
 
         carregaDados();
+
+        if(alterarFicha != null){
+            carregaDadosAlterar();
+        }
     }
 
     public void carregaDados() {
@@ -215,5 +234,115 @@ public class Pericia_SalvaGuardas extends AppCompatActivity {
         checkBoxInteligencia.setChecked(ficha.isInteligencia());
         checkBoxDestreza.setChecked(ficha.isDestreza());
         checkBoxConstituicao.setChecked(ficha.isCostituicao());
+    }
+
+    public void carregaDadosAlterar(){
+        checkBoxAcrobacia.setChecked(alterarFicha.isAcrobacia());
+        checkBoxAdrestrarAnimais.setChecked(alterarFicha.isAdestrarAnimais());
+        checkBoxArcanismo.setChecked(alterarFicha.isArcanismo());
+        checkBoxAtletismo.setChecked(alterarFicha.isAtletismo());
+        checkBoxAtuacao.setChecked(alterarFicha.isAtuacao());
+        checkBoxEnganacao.setChecked(alterarFicha.isEnganacao());
+        checkBoxFurtividade.setChecked(alterarFicha.isFurtividade());
+        checkBoxHistoria.setChecked(alterarFicha.isHistoria());
+        checkBoxIntimidacao.setChecked(alterarFicha.isIntimidacao());
+        checkBoxIntuicao.setChecked(alterarFicha.isIntuicao());
+        checkBoxInvestigacao.setChecked(alterarFicha.isInvestigacao());
+        checkBoxMedicina.setChecked(alterarFicha.isMedicina());
+        checkBoxNatureza.setChecked(alterarFicha.isNatureza());
+        checkBoxPercepcao.setChecked(alterarFicha.isPercepcao());
+        checkBoxPersuasao.setChecked(alterarFicha.isPersuasao());
+        checkBoxPrestigitacao.setChecked(alterarFicha.isPrestigitacao());
+        checkBoxReligiao.setChecked(alterarFicha.isReligiao());
+        checkBoxSobrevivencia.setChecked(alterarFicha.isSobrevivencia());
+        acrobacia.setText(alterarFicha.getTxtAcrobacia());
+        adestrarAnimais.setText(alterarFicha.getTxtAdestrarAnimais());
+        arcanismo.setText(alterarFicha.getTxtArcanismo());
+        atletismo.setText(alterarFicha.getTxtAtletismo());
+        atuacao.setText(alterarFicha.getTxtAtuacao());
+        enganacao.setText(alterarFicha.getTxtEnganacao());
+        furtividade.setText(alterarFicha.getTxtFurtividade());
+        historia.setText(alterarFicha.getTxtHistoria());
+        intimidacao.setText(alterarFicha.getTxtIntimidacao());
+        intuicao.setText(alterarFicha.getTxtIntuicao());
+        investigacao.setText(alterarFicha.getTxtInvestigacao());
+        medicina.setText(alterarFicha.getTxtMedicina());
+        natureza.setText(alterarFicha.getTxtNatureza());
+        percepcao.setText(alterarFicha.getTxtPercepcao());
+        persuasao.setText(alterarFicha.getTxtPersuasao());
+        prestigitacao.setText(alterarFicha.getTxtPrestigitacao());
+        religiao.setText(alterarFicha.getTxtReligiao());
+        sobrevivencia.setText(alterarFicha.getTxtSobrevivencia());
+        inspiracaoId.setText(alterarFicha.getInspiracao());
+        bonusProficiencia.setText(alterarFicha.getBonusDeProficiencia());
+        sabedoriaPassiva.setText(alterarFicha.getSabedoriaPassiva());
+        forcaId.setText(alterarFicha.getTxtForca());
+        sabedoriaId.setText(alterarFicha.getTxtSabedoria());
+        carismaId.setText(alterarFicha.getTxtCarisma());
+        inteligenciaId.setText(alterarFicha.getTxtInteligencia());
+        destrezaId.setText(alterarFicha.getTxtDestreza());
+        constituicaoId.setText(alterarFicha.getTxtCostituicao());
+        checkBoxForca.setChecked(alterarFicha.isForca());
+        checkBoxSabedoria.setChecked(alterarFicha.isSabedoria());
+        checkBoxCarisma.setChecked(alterarFicha.isCarisma());
+        checkBoxInteligencia.setChecked(alterarFicha.isInteligencia());
+        checkBoxDestreza.setChecked(alterarFicha.isDestreza());
+        checkBoxConstituicao.setChecked(alterarFicha.isCostituicao());
+    }
+
+
+    public void carregarFichaNoSlot(final String codSessao, final String slot){
+
+        DatabaseReference slotN =  FirebaseDatabase.getInstance().getReference().child("sessoes").child(codSessao).child(slot);
+        DatabaseReference slot6 =  FirebaseDatabase.getInstance().getReference().child("sessoes").child(codSessao).child("slot6");
+
+        if(alterarFicha.getId() != null) {
+            DatabaseReference ficha = FirebaseDatabase.getInstance().getReference("jogadores")
+                    .child(this.ficha.getIdJogador())
+                    .child("fichas")
+                    .child(alterarFicha.getId());
+            try {
+                ficha.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Ficha fichaModel = snapshot.getValue(Ficha.class);
+
+                        Bundle informacoesSessao = new Bundle();
+                        informacoesSessao.putString("id_jogador", fichaModel.getIdJogador());
+                        informacoesSessao.putString("id_ficha", alterarFicha.getId() == null ? "" : alterarFicha.getId());
+                        informacoesSessao.putString("cod_sessao", codSessao);
+                        informacoesSessao.putString("slot_jogador", slot);
+                        Intent intentIrParaSessao = new Intent(Pericia_SalvaGuardas.this, TelaSessao.class);
+                        intentIrParaSessao.putExtras(informacoesSessao);
+
+                        slotN.child("status").setValue("ocupado");
+                        slotN.child("ficha").setValue(fichaModel);
+                        startActivity(intentIrParaSessao);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Log.e("erroCarregarFicha", error.getMessage());
+                    }
+                });
+
+            } catch (Exception e) {
+                Log.e("erroCarregarFicha", e.getMessage());
+            }
+        }else {
+            Bundle informacoesSessao = new Bundle();
+            informacoesSessao.putString("cod_sessao", codSessao);
+            informacoesSessao.putString("tipo_usuario", "mestre");
+            informacoesSessao.putString("slot_jogador", slot);
+            Intent intentIrParaSessao;
+            intentIrParaSessao = new Intent(Pericia_SalvaGuardas.this, TelaSessao.class);
+            intentIrParaSessao.putExtras(informacoesSessao);
+
+            slot6.child("status").setValue("ocupado");
+            slot6.child("mestre").setValue(this.ficha.getIdJogador());
+            intentIrParaSessao.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intentIrParaSessao);
+        }
+
     }
 }

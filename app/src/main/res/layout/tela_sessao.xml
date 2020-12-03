@@ -108,11 +108,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.781" />
 
-    <ImageView
-        android:id="@+id/imageView5"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagemJogador5"
         android:layout_width="87dp"
         android:layout_height="90dp"
-        android:contentDescription="@string/todo"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.959"
@@ -135,21 +136,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.576" />
 
-    <TextView
-        android:id="@+id/mp5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mana"
-        android:textAllCaps="true"
-        android:textColor="#F3EFEF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.895"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655"
-        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/hp5"
@@ -183,11 +169,12 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/imageView4"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagemJogador4"
         android:layout_width="87dp"
         android:layout_height="90dp"
-        android:contentDescription="@string/todo"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.743"
@@ -211,21 +198,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
-    <TextView
-        android:id="@+id/mp4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mana"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655"
-        tools:visibility="visible" />
+
 
     <TextView
         android:id="@+id/nome4"
@@ -275,11 +248,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.576" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagemJogador3"
         android:layout_width="87dp"
         android:layout_height="90dp"
-        android:contentDescription="@string/todo"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -316,21 +290,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.576" />
 
-    <TextView
-        android:id="@+id/mp3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mana"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655"
-        tools:visibility="visible" />
+
 
     <TextView
         android:id="@+id/nome3"
@@ -366,11 +326,12 @@
         app:layout_constraintVertical_bias="0.566"
         tools:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagemJogador2"
         android:layout_width="87dp"
         android:layout_height="90dp"
-        android:contentDescription="@string/todo"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.24"
@@ -442,27 +403,14 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
-    <TextView
-        android:id="@+id/mp2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mana"
-        android:textAllCaps="true"
-        android:textColor="#FFF3F3"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655"
-        tools:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/imageView"
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagemJogador1"
         android:layout_width="87dp"
         android:layout_height="90dp"
-        android:contentDescription="@string/todo"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.029"
@@ -503,21 +451,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
-    <TextView
-        android:id="@+id/mp1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mana"
-        android:textAllCaps="true"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655"
-        tools:visibility="visible" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -604,6 +537,8 @@
         android:id="@+id/resultadoDado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
         android:text="ResultadodoDado"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
@@ -614,5 +549,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.941" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="45dp"
+        android:layout_height="33dp"
+        android:background="@color/marrom_claro"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_baseline_queue_music_24"
+        />
+
+    <TextView
+        android:id="@+id/statusMestreId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="STATUS MESTRE"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

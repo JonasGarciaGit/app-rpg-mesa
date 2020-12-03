@@ -100,55 +100,71 @@
             android:gravity="center"
             android:text="Configuração"
             android:textColor="@color/buttonText"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            android:layout_weight="1"/>
 
-        <TextView
-            android:id="@+id/resultado"
+        <LinearLayout
+            android:padding="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Linguagem"
-            android:textColor="@color/buttonText"
-            android:textStyle="bold" />
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
 
-        <RadioGroup
-            android:layout_width="262dp"
-            android:layout_height="53dp">
-
-            <RadioButton
-                android:id="@+id/radioButton"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:checked="true"
-                android:text="Portugues"
-                android:textColor="@color/buttonText"
-                android:textColorLink="@color/buttonText" />
+                android:layout_height="30dp"
+                android:text="Habilitar som: "
+                android:textColor="@color/white"
+                android:padding="5dp"
+                android:layout_weight="1"
+                ></TextView>
 
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:text="Inglês"
-                android:textColor="@color/buttonText" />
-        </RadioGroup>
+            <RadioGroup
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:id="@+id/radioSomSim"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:text="Sim"
+                    android:textColor="@color/white"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radioSomNao"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:text="Não"
+                    android:textColor="@color/white"></RadioButton>
+
+
+            </RadioGroup>
+        </LinearLayout>
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/btnSalvarConfig"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/buttonColor"
-            android:onClick="salvar"
             android:text="Salvar"
-            android:textColor="@color/buttonText" />
+            android:textColor="@color/buttonText"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            />
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/btnVoltarConfig"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/buttonColor"
             android:onClick="voltar"
             android:text="Voltar"
-            android:textColor="@color/buttonText" />
-
+            android:textColor="@color/buttonText"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,8 @@
 package com.example.ppi;
-
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -31,13 +32,17 @@ public class FichaPersonagem extends AppCompatActivity {
     private Spinner classe, raca, subRaca;
 
     public String idJogador;
+    private Ficha alterarFicha = null;
+    private String codSessao = null;
+    private MediaPlayer mdp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personagem);
         idJogador = getIntent().getStringExtra("id_jogador");
-
+        alterarFicha = (Ficha) getIntent().getSerializableExtra("ficha");
+        codSessao = getIntent().getStringExtra("cod_sessao");
         nivel = findViewById(R.id.nivel);
         nomePersonagem = findViewById(R.id.nomePersonagem);
         antecedente = findViewById(R.id.antecedente);
@@ -74,6 +79,10 @@ public class FichaPersonagem extends AppCompatActivity {
         fracasso2 = findViewById(R.id.fracasso2);
         fracasso3 = findViewById(R.id.fracasso3);
 
+        if(alterarFicha != null){
+            carregaDadosFicha();
+        }
+
         //variavel global, gambiarra
         final String[] classeNomeGlobal = {""};
 
@@ -97,8 +106,8 @@ public class FichaPersonagem extends AppCompatActivity {
         raca.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                    String raca = adapterView.getItemAtPosition(position).toString();
-                    carregaSubRaca(raca);
+                String raca = adapterView.getItemAtPosition(position).toString();
+                carregaSubRaca(raca);
             }
 
             @Override
@@ -108,19 +117,19 @@ public class FichaPersonagem extends AppCompatActivity {
         });
 
 
-       subRaca.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-           @Override
-           public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-               String subRaca = adapterView.getItemAtPosition(position).toString();
-               carregaDadosSubRaca(subRaca);
-               carregaDadosClasse(classeNomeGlobal[0]);
-           }
+        subRaca.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                String subRaca = adapterView.getItemAtPosition(position).toString();
+                carregaDadosSubRaca(subRaca);
+                carregaDadosClasse(classeNomeGlobal[0]);
+            }
 
-           @Override
-           public void onNothingSelected(AdapterView<?> adapterView) {
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
-           }
-       });
+            }
+        });
     }
 
 
@@ -167,12 +176,24 @@ public class FichaPersonagem extends AppCompatActivity {
         listaFracasso.add(fracasso1.isChecked());
         listaFracasso.add(fracasso2.isChecked());
         listaFracasso.add(fracasso3.isChecked());
+        ficha.setSucesso(listaSucesso);
+        ficha.setFracasso(listaFracasso);
 
         carregarArmas(classe.getSelectedItem().toString(), ficha);
         carregaTesteResistenciaPericias(classe.getSelectedItem().toString(), ficha);
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("ficha",ficha);
+
+        if(alterarFicha != null){
+            bundle.putSerializable("alterarFicha", alterarFicha);
+            ficha.setIdJogador(alterarFicha.getIdJogador());
+
+        }
+        if(codSessao != null){
+            bundle.putString("cod_sessao", getIntent().getStringExtra("cod_sessao"));
+            bundle.putString("slot_jogador", getIntent().getStringExtra("slot_jogador"));
+        }
 
         Intent intent = new Intent(getApplicationContext(), Inventario.class);
         intent.putExtras(bundle);
@@ -603,4 +624,161 @@ public class FichaPersonagem extends AppCompatActivity {
                 break;
         }
     }
+
+    public void carregaDadosFicha(){
+
+        nivel.setText(alterarFicha.getNivel());
+        nomePersonagem.setText(alterarFicha.getNomeDoPersonagem());
+        antecedente.setText(alterarFicha.getAntecedente());
+        classe.setSelection(setSpinnerClasse(alterarFicha.getClasse()));
+        raca.setSelection(setSpinnerRaca(alterarFicha.getRaca()));
+        // subRaca.setSelection(setSpinnerRaca(alterarFicha.getSubRaca()));
+        tendencia.setText(alterarFicha.getTendencia());
+        pontosExperiencia.setText(alterarFicha.getPontosDeExperiencia());
+        nomeJogador.setText(alterarFicha.getNomeDoJogador());
+        forca.setText(alterarFicha.getPtsForça());
+        destreza.setText(alterarFicha.getPtsDestreza());
+        constituicao.setText(alterarFicha.getPtsConstituicao());
+        inteligencia.setText(alterarFicha.getPtsInteligencia());
+        sabedoria.setText(alterarFicha.getPtsSabedoria());
+        carisma.setText(alterarFicha.getPtsCarisma());
+        extraForca.setText(alterarFicha.getExtraForca());
+        extraDestreza.setText(alterarFicha.getExtraDestreza());
+        extraCostituicao.setText(alterarFicha.getExtraConstituicao());
+        extraInteligencia.setText(alterarFicha.getExtraInteligencia());
+        extraSabedoria.setText(alterarFicha.getExtraSabedoria());
+        extraCarisma.setText(alterarFicha.getExtraCarisma());
+        classeArmadura.setText(alterarFicha.getClasseArmadura());
+        iniciativa.setText(alterarFicha.getIniciativa());
+        deslocamento.setText(alterarFicha.getDeslocamento());
+        pvTotais.setText(alterarFicha.getPvTotais());
+        pvAtuais.setText(alterarFicha.getPvAtuais());
+        pvTemporario.setText(alterarFicha.getPvTemporario());
+        dadosVida.setText(alterarFicha.getDadosDeVida());
+        total.setText(alterarFicha.getTotal());
+        sucesso1.setChecked(alterarFicha.getSucesso().get(0) == null ? false : alterarFicha.getSucesso().get(0).booleanValue());
+        sucesso2.setChecked(alterarFicha.getSucesso().get(1) == null ? false : alterarFicha.getSucesso().get(1).booleanValue());
+        sucesso3.setChecked(alterarFicha.getSucesso().get(2) == null ? false : alterarFicha.getSucesso().get(2).booleanValue());
+        fracasso1.setChecked(alterarFicha.getFracasso().get(0) == null ? false : alterarFicha.getFracasso().get(0).booleanValue());
+        fracasso2.setChecked(alterarFicha.getFracasso().get(1) == null ? false : alterarFicha.getFracasso().get(1).booleanValue());
+        fracasso3.setChecked(alterarFicha.getFracasso().get(2) == null ? false : alterarFicha.getFracasso().get(2).booleanValue());
+    }
+
+    public int setSpinnerClasse(String nomeClasse){
+        int position;
+        switch (nomeClasse) {
+            case "Barbaro":
+                position = 0;
+                break;
+            case "Bardo":
+                position = 1;
+                break;
+            case "Bruxo":
+                position = 2;
+                break;
+            case "Clerigo":
+                position = 3;
+                break;
+            case "Druida":
+                position = 4;
+                break;
+            case "Feiticeiro":
+                position = 5;
+                break;
+            case "Guerreiro":
+                position = 6;
+                break;
+            case "Ladino":
+                position = 7;
+                break;
+            case "Mago":
+                position = 8;
+                break;
+            case "Monge":
+                position = 9;
+                break;
+            case "Paladino":
+                position = 10;
+                break;
+            case "Patrulheiro":
+                position = 11;
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + nomeClasse);
+        }
+        return position;
+    }
+
+    private int setSpinnerRaca(String nomeRaca){
+        int position;
+        switch (nomeRaca){
+            case "Anao":
+                position = 0;
+                break;
+            case "Elfo":
+                position = 1;
+                break;
+            case "Halfling":
+                position = 2;
+                break;
+            case "Humano":
+                position = 3;
+                break;
+            case "Draconato":
+                position = 4;
+                break;
+            case "Gnomo":
+                position = 5;
+                break;
+            case "Meio-elfo":
+                position = 6;
+                break;
+            case "Meio-orc":
+                position = 7;
+                break;
+            case "Tieflings":
+                position = 8;
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + nomeRaca);
+        }
+        return position;
+    }
+
+    private int setSpinnerSubRaca(String nomeSubRaca){
+        int position;
+        switch (nomeSubRaca){
+            case "Anao da colina":
+                position = 0;
+                break;
+            case "Anao da montanha":
+                position = 1;
+                break;
+            case "Elfo da floresta":
+                position = 0;
+                break;
+            case "Alto elfo":
+                position = 1;
+                break;
+            case "Elfo negro":
+                position = 2;
+                break;
+            case "Pes leves":
+                position = 0;
+                break;
+            case "Robustos":
+                position = 1;
+                break;
+            case "Gnomo da floresta":
+                position = 0;
+                break;
+            case "Gnomo das rochas":
+                position = 1;
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + nomeSubRaca);
+        }
+        return position;
+    }
+
 }

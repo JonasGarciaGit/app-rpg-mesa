@@ -13,6 +13,8 @@ import model.Ficha;
 public class Caracteristica extends AppCompatActivity {
 
     private Ficha ficha;
+    private Ficha alterarFicha = null;
+    private String codSessao = null;
     private TextInputLayout tracosPersonalidades, ideais, vinculos, defeitos, caractTracosRaciais;
 
     @Override
@@ -25,8 +27,13 @@ public class Caracteristica extends AppCompatActivity {
         vinculos = findViewById(R.id.vinculosId);
         defeitos = findViewById(R.id.defeitosId);
         caractTracosRaciais = findViewById(R.id.caracTracosRaciaisId);
-
+        codSessao = getIntent().getStringExtra("cod_sessao");
         ficha = (Ficha) getIntent().getSerializableExtra("ficha");
+        alterarFicha = (Ficha) getIntent().getSerializableExtra("alterarFicha");
+
+        if(alterarFicha != null){
+            carregaDadosAlterar();
+        }
     }
 
     public void buttonCaracteristica (View view) {
@@ -38,13 +45,28 @@ public class Caracteristica extends AppCompatActivity {
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("ficha", ficha);
-
+        if(alterarFicha != null){
+            bundle.putSerializable("alterarFicha", alterarFicha);
+        }
+        if(codSessao != null){
+            bundle.putString("cod_sessao", getIntent().getStringExtra("cod_sessao"));
+            bundle.putString("slot_jogador", getIntent().getStringExtra("slot_jogador"));
+        }
 
         Intent intent = new Intent(getApplicationContext(), Pericia_SalvaGuardas.class);
         intent.putExtras(bundle);
         startActivity(intent);
 
 
+    }
+
+
+    public void carregaDadosAlterar(){
+        tracosPersonalidades.getEditText().setText(alterarFicha.getTracosPersonalidades());
+        ideais.getEditText().setText(alterarFicha.getIdeias());
+        vinculos.getEditText().setText(alterarFicha.getVinculos());
+        defeitos.getEditText().setText(alterarFicha.getDefeitos());
+        caractTracosRaciais.getEditText().setText(alterarFicha.getCaracteristicasTracosRaciais());
     }
 
 }

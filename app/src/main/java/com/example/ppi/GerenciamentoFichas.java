@@ -1,5 +1,4 @@
 package com.example.ppi;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -159,13 +158,6 @@ public class GerenciamentoFichas extends AppCompatActivity {
 
     }
 
-
-    public void editar(View view){
-        Intent intentGerenciarFicha = new Intent(GerenciamentoFichas.this , TelaEditar.class);
-        startActivity(intentGerenciarFicha);
-    }
-
-
     public void deletar(final String idFicha, final String idJogador){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Deseja mesmo deletar essa ficha?")
@@ -210,7 +202,7 @@ public class GerenciamentoFichas extends AppCompatActivity {
 
 
                     if(listaFichas == null || listaFichas.isEmpty()){
-                       Log.e("erroBuscarFichas", "Falha ao buscar fichas");
+                        Log.e("erroBuscarFichas", "Falha ao buscar fichas");
                     }else{
                         int verificarFicha = 1;
                         for(Ficha f: listaFichas){
@@ -223,6 +215,17 @@ public class GerenciamentoFichas extends AppCompatActivity {
                                 btCriarFicha1.setVisibility(View.INVISIBLE);
                                 btEditar1.setVisibility(View.VISIBLE);
                                 btDeletar1.setVisibility(View.VISIBLE);
+                                btEditar1.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Bundle bundle = new Bundle();
+                                        bundle.putString("id_jogador", parametros.getString("id_usuario"));
+                                        bundle.putSerializable("ficha", f);
+                                        Intent intentGerenciarFicha = new Intent(GerenciamentoFichas.this , FichaPersonagem.class);
+                                        intentGerenciarFicha.putExtras(bundle);
+                                        startActivity(intentGerenciarFicha);
+                                    }
+                                });
                             }
                             if(verificarFicha == 2){
                                 nomePersonagem2.setText(f.getNomeDoPersonagem().isEmpty() || f.getNomeDoPersonagem() == null ? "---" : f.getNomeDoPersonagem());
@@ -233,6 +236,17 @@ public class GerenciamentoFichas extends AppCompatActivity {
                                 btCriarFicha2.setVisibility(View.INVISIBLE);
                                 btEditar2.setVisibility(View.VISIBLE);
                                 btDeletar2.setVisibility(View.VISIBLE);
+                                btEditar2.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Bundle bundle = new Bundle();
+                                        bundle.putSerializable("ficha", f);
+                                        bundle.putString("id_jogador", parametros.getString("id_usuario"));
+                                        Intent intentGerenciarFicha = new Intent(GerenciamentoFichas.this , FichaPersonagem.class);
+                                        intentGerenciarFicha.putExtras(bundle);
+                                        startActivity(intentGerenciarFicha);
+                                    }
+                                });
                             }
                             if(verificarFicha == 3){
                                 nomePersonagem3.setText(f.getNomeDoPersonagem().isEmpty() || f.getNomeDoPersonagem() == null ? "---" : f.getNomeDoPersonagem());
@@ -243,6 +257,17 @@ public class GerenciamentoFichas extends AppCompatActivity {
                                 btCriarFicha3.setVisibility(View.INVISIBLE);
                                 btEditar3.setVisibility(View.VISIBLE);
                                 btDeletar3.setVisibility(View.VISIBLE);
+                                btEditar3.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Bundle bundle = new Bundle();
+                                        bundle.putSerializable("ficha", f);
+                                        bundle.putString("id_jogador", parametros.getString("id_usuario"));
+                                        Intent intentGerenciarFicha = new Intent(GerenciamentoFichas.this , FichaPersonagem.class);
+                                        intentGerenciarFicha.putExtras(bundle);
+                                        startActivity(intentGerenciarFicha);
+                                    }
+                                });
                             }
                             verificarFicha++;
                         }
@@ -270,4 +295,10 @@ public class GerenciamentoFichas extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), TelaInicial.class);
+        finish();
+        startActivity(intent);
+    }
 }

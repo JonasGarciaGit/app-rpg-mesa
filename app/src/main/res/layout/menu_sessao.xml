@@ -61,6 +61,15 @@
                 android:text="Ficha 3"
                 android:textColor="@color/buttonText"
                 android:textStyle="bold" />
+
+
+            <RadioButton
+                android:id="@+id/radioMestre"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:text="Mestre"
+                android:textColor="@color/buttonText"
+                android:textStyle="bold" />
         </RadioGroup>
 
         <Button

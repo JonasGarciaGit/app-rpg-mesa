@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,6 +38,10 @@ public class TelaInicial extends AppCompatActivity {
 
     LinearLayout menuconfig;
     Button btnGerenciarFichas;
+    RadioButton radioSomSim;
+    RadioButton radioSomNao;
+    Button btnSalvarConfig;
+
     public String id;
 
     Button singOut;
@@ -53,6 +59,9 @@ public class TelaInicial extends AppCompatActivity {
         btnGerenciarFichas = findViewById(R.id.btGerenciarFichas);
         menuconfig = findViewById(R.id.menuConfig);
         menuconfig.setVisibility(View.GONE);
+        radioSomNao = findViewById(R.id.radioSomNao);
+        radioSomSim = findViewById(R.id.radioSomSim);
+        btnSalvarConfig = findViewById(R.id.btnSalvarConfig);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -71,6 +80,13 @@ public class TelaInicial extends AppCompatActivity {
             CriarJogador("app", null);
         }
 
+
+        btnSalvarConfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                controleMusica();
+            }
+        });
 
         singOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,6 +110,7 @@ public class TelaInicial extends AppCompatActivity {
         btnGerenciarFichas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mdp.stop();
                 Intent intentMenuPrincipal = new Intent(TelaInicial.this, GerenciamentoFichas.class);
                 Bundle parametros = new Bundle();
                 parametros.putString("id_usuario", id);
@@ -102,23 +119,25 @@ public class TelaInicial extends AppCompatActivity {
             }
         });
 
-//        mdp = MediaPlayer.create(TelaInicial.this, R.raw.yggdrasil);
-//        mdp.start();
-//        mdp.setLooping(true);
+        mdp = MediaPlayer.create(TelaInicial.this, R.raw.yggdrasil);
+        mdp.setVolume(0.3f, 0.3f);
+        mdp.start();
+        mdp.setLooping(true);
     }
 
 
     public void sessao(View view) {
+        mdp.stop();
         Bundle param = new Bundle();
         param.putString("id_usuario", id);
         Intent intent = new Intent(getApplicationContext(), MenuSessao.class);
         intent.putExtras(param);
+        finish();
         startActivity(intent);
     }
 
 
     public void config(View view) {
-
         menuconfig.setVisibility(View.VISIBLE);
     }
 
@@ -191,4 +210,16 @@ public class TelaInicial extends AppCompatActivity {
         menuconfig.setVisibility(View.GONE);
     }
 
+    public void controleMusica() {
+        if (radioSomSim.isChecked()) {
+            mdp = MediaPlayer.create(TelaInicial.this, R.raw.yggdrasil);
+            mdp.setVolume(0.3f, 0.3f);
+            mdp.start();
+            mdp.setLooping(true);
+        }
+        if (radioSomNao.isChecked()) {
+            mdp.stop();
+        }
+
+    }
 }

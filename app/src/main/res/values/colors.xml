@@ -25,4 +25,5 @@
     <color name="letraBotao">#4C453C</color>
     <color name="fundoBotao">#D0A435</color>
     <color name="outline">#D0A435</color>
+    <color name="slider_musica">#9C000000</color>
 </resources>

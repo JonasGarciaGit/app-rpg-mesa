@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".Login"
     >
-
     <ImageView
         android:id="@+id/loginScreenImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +26,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewLogin"
         android:layout_width="450dp"
-        android:layout_height="310dp"
+        android:layout_height="360dp"
         android:visibility="visible"
         app:cardBackgroundColor="@color/fundo_login"
         app:cardCornerRadius="5dp"
@@ -33,7 +38,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.497">
-
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="wrap_content"
@@ -46,7 +50,6 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
         <TextView
             android:id="@+id/txtTitulo2"
             android:layout_width="wrap_content"
@@ -57,32 +60,29 @@
             android:textColor="@color/subtitulo_login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/loginUsuario"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="70dp"
             android:textColorHint="@color/subtitulo_login"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/outline"
             app:startIconDrawable="@drawable/iconeusuario"
             app:startIconTint="@color/titulo_login">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
                 android:textColor="@color/cor_letra_padrao" />
         </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/loginSenha"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="150dp"
             android:textColorHint="@color/subtitulo_login"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/outline"
@@ -90,7 +90,6 @@
             app:passwordToggleTint="@color/titulo_login"
             app:startIconDrawable="@drawable/iconechave"
             app:startIconTint="@color/titulo_login">
-
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -98,13 +97,12 @@
                 android:inputType="textPassword"
                 android:textColor="@color/cor_letra_padrao" />
         </com.google.android.material.textfield.TextInputLayout>
-
         <Button
             android:id="@+id/btCadastrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="65dp"
+            android:layout_marginBottom="85dp"
             android:background="@color/bt_login"
             android:minHeight="30dp"
             android:onClick="validarLogin"
@@ -112,44 +110,40 @@
             android:textColor="@color/subtitulo_login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
         <TextView
             android:id="@+id/txtCadastro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="100dp"
             android:onClick="trocarTela"
             android:text="Cadastrar-se"
-            android:textColor="@color/subtitulo_login" />
-
+            android:textColor="@color/titulo_login" />
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="45dp"
+            android:layout_marginBottom="55dp"
             android:text="Ou"
             android:textColor="@color/subtitulo_login" />
-
         <Button
             android:id="@+id/google_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginBottom="5dp"
-            android:drawableStart="@drawable/google_icon"
-            android:drawablePadding="8dp"
-            android:minHeight="35dp"
-            android:text="Google"
-            android:textAllCaps="false"
+            android:layout_marginBottom="3dp"
+            android:text="Sign in"
+            android:textColor="@color/subtitulo_login"
+            app:icon="@drawable/googleg_standard_color_18"
+            app:iconTint="#FFFFFF"
+            app:iconTintMode="multiply"
             tools:ignore="RtlCompat" />
 
 
     </androidx.cardview.widget.CardView>
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

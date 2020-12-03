@@ -19,16 +19,19 @@ public class Inventario extends AppCompatActivity {
 
 
 
-     private Ficha ficha;
-     private EditText nomeAtq1, nomeAtq2, nomeAtq3, bonusAtq1, bonusAtq2, bonusAtq3, danoAtq1, danoAtq2, danoAtq3, pcld, ppld, peld, pold, plld;
-     private TextInputLayout atqConjud, descricaoEquipamento;
+    private Ficha ficha;
+    private Ficha alterarFicha = null;
+    private String codSessao = null;
+    private EditText nomeAtq1, nomeAtq2, nomeAtq3, bonusAtq1, bonusAtq2, bonusAtq3, danoAtq1, danoAtq2, danoAtq3, pcld, ppld, peld, pold, plld;
+    private TextInputLayout atqConjud, descricaoEquipamento;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventario);
-
+        codSessao = getIntent().getStringExtra("cod_sessao");
+        alterarFicha = (Ficha) getIntent().getSerializableExtra("alterarFicha");
         nomeAtq1 = findViewById(R.id.nomeAtq1);
         nomeAtq2 = findViewById(R.id.nomeAtq2);
         nomeAtq3 = findViewById(R.id.nomeAtq3);
@@ -44,10 +47,14 @@ public class Inventario extends AppCompatActivity {
         pold = findViewById(R.id.poId);
         plld = findViewById(R.id.plId);
         atqConjud = findViewById(R.id.atqConjuId);
-
         descricaoEquipamento = findViewById(R.id.descEquipamento);
-         ficha = (Ficha) getIntent().getSerializableExtra("ficha");
+
+        ficha = (Ficha) getIntent().getSerializableExtra("ficha");
         carregaDados();
+
+        if(alterarFicha != null){
+            carregaDadosAlterar();
+        }
     }
 
     public void buttonInventario(View view) {
@@ -75,6 +82,13 @@ public class Inventario extends AppCompatActivity {
 
         //Bundle é um Pacote
         Bundle bundle = new Bundle();
+        if(alterarFicha != null){
+            bundle.putSerializable("alterarFicha", alterarFicha);
+        }
+        if(codSessao != null){
+            bundle.putString("cod_sessao", getIntent().getStringExtra("cod_sessao"));
+            bundle.putString("slot_jogador", getIntent().getStringExtra("slot_jogador"));
+        }
         bundle.putSerializable("ficha",ficha);
         Intent intent = new Intent(getApplicationContext(), Caracteristica.class);
         intent.putExtras(bundle);
@@ -100,4 +114,23 @@ public class Inventario extends AppCompatActivity {
         }
     }
 
+
+    private void carregaDadosAlterar(){
+        nomeAtq1.setText(alterarFicha.getNomeAtaqueConjuracao().get(0).isEmpty() ? "" : alterarFicha.getNomeAtaqueConjuracao().get(0));
+        nomeAtq2.setText(alterarFicha.getNomeAtaqueConjuracao().get(1).isEmpty() ? "" : alterarFicha.getNomeAtaqueConjuracao().get(1));
+        nomeAtq3.setText(alterarFicha.getNomeAtaqueConjuracao().get(2).isEmpty() ? "" : alterarFicha.getNomeAtaqueConjuracao().get(2));
+        bonusAtq1.setText(alterarFicha.getBonusAtaque().get(0).isEmpty() ? "" : alterarFicha.getBonusAtaque().get(0));
+        bonusAtq2.setText(alterarFicha.getBonusAtaque().get(1).isEmpty() ? "" : alterarFicha.getBonusAtaque().get(1));
+        bonusAtq3.setText(alterarFicha.getBonusAtaque().get(2).isEmpty() ? "" : alterarFicha.getBonusAtaque().get(2));
+        danoAtq1.setText(alterarFicha.getDanoTipo().get(0).isEmpty() ? "" : alterarFicha.getDanoTipo().get(0));
+        danoAtq2.setText(alterarFicha.getDanoTipo().get(1).isEmpty() ? "" : alterarFicha.getDanoTipo().get(1));
+        danoAtq3.setText(alterarFicha.getDanoTipo().get(2).isEmpty() ? "" : alterarFicha.getDanoTipo().get(2));
+        pcld.setText(alterarFicha.getPc());
+        ppld.setText(alterarFicha.getPp());
+        peld.setText(alterarFicha.getPe());
+        pold.setText(alterarFicha.getPo());
+        plld.setText(alterarFicha.getPl());
+        atqConjud.getEditText().setText(alterarFicha.getAtaqueCojuracaoDescricao());
+        descricaoEquipamento.getEditText().setText(alterarFicha.getEquipamentoDescricao());
+    }
 }

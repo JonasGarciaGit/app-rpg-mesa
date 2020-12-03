@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login"
@@ -9,8 +17,8 @@
 
     <ImageView
         android:id="@+id/loginScreenImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,7 +29,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewLogin"
         android:layout_width="450dp"
-        android:layout_height="380dp"
+        android:layout_height="450dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:visibility="visible"
@@ -83,7 +91,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="140dp"
             android:textColorHint="@color/subtitulo_login"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/outline"
@@ -102,7 +110,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="220dp"
             android:textColorHint="@color/subtitulo_login"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/outline"
@@ -124,7 +132,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="300dp"
             android:textColorHint="@color/subtitulo_login"
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/outline"
@@ -159,3 +167,4 @@
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
